@@ -1,0 +1,44 @@
+<app-pre-loader *ngIf="preloader"></app-pre-loader>
+
+<div *ngIf="!preloader">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<app-top-bar-main></app-top-bar-main>
+<div class="page">
+  <div class="post-detail">
+     <div class="post-actions" (click)="returnBack()">
+        <span class="material-symbols-outlined">arrow_back </span>
+     </div>
+    <h2 class="post-title">{{diary.title}}</h2>
+    <img [src]="diary.image">
+    <p style = "font-size: 25px;" class="desc">{{diary.body}}</p>
+    <div class="post-actions">
+      <button style="margin-left: 5%">
+        <i class="fa fa-heart" aria-hidden="true" (click)="likePost()"></i><p>{{diary.likes}}</p>
+      </button>
+      <h4>Date: September, 4 * 11:12 AM</h4>
+    </div>
+    <div class="panel">
+      <div class="panel-body">
+        <textarea class="form-control" rows="2" placeholder="What are you thinking?" [(ngModel)] ="newComment"></textarea>
+        <div class="mar-top clearfix">
+          <button class="btn btn-sm btn-primary pull-right" type="submit"><i class="fa fa-pencil fa-fw" (click)="postComment(newComment)"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="panel" *ngFor="let comment of comments">
+        <div class="panel-body">
+          <div class="media-block">
+            <a class="media-left" style = "margin-right: 3%;" href="#"><img class="img-circle img-sm" alt="Profile Picture" src="https://bootdey.com/img/Content/avatar/avatar1.png"></a>
+            <div class="media-body">
+              <div class="mar-btm">
+                <h3 style = "margin-bottom: 10px;" class="btn-link text-semibold media-heading box-inline">{{ comment.username }}</h3>
+                <p style = "margin-top: 11px; font-size: 15px;" class="text-muted text-sm"><i class="fa fa-mobile fa-lg"></i> {{ comment.createdAt }}</p>
+              </div>
+              <p>{{ comment.body }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

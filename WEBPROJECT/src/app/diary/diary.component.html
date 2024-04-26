@@ -1,0 +1,216 @@
+<app-pre-loader *ngIf="preloader"></app-pre-loader>
+
+
+<div *ngIf="!preloader">
+
+    <header>
+        <img src="https://i.ibb.co/cvgf59H/1-1.png" class="logo" #logo>
+        <nav class="navigation">
+            <button #showMoods class = "btn" (click)="openPopup()">{{isOpenedMoodWindow? "😂 👿 😭" : "😋 😡 😢"}}</button>
+            <a href="" [routerLink]="['/home']">Home</a>
+            <a href="" [routerLink]="['/profile']">Profile</a>
+            <a href="" class="active" [routerLink]="['/login']">Log out</a>
+        </nav>
+    </header>
+
+    <div #enjoy *ngIf = "isOpenedEnjoyWindow">
+    </div>
+
+    <div #popupMain *ngIf="isOpenedMoodWindow">
+        <div class="container">
+            <div class = "popup">
+                <div class="moods">
+                    <div class="up">
+                        <div class="mood">
+                            <img id = "snowpeaksid" src="https://www.imagehost.at/images/2023/04/21/Hell-7.png" (click) = "activateSnowPeaks()" alt="" class="moodimg">
+                        </div>
+                        <div  class="mood">
+                            <img id = "rainyid" src="https://www.imagehost.at/images/2023/04/21/Hell-8.png" (click) = "activateRainy()" alt="" class="moodimg">
+                        </div>
+                        <div  class="mood">
+                            <img id = "rainbowid" src="https://www.imagehost.at/images/2023/04/21/Hell-9.png" (click) = "activateRainbow()" alt="" class="moodimg">
+                        </div>
+                    </div><br>
+                    <div class="down">
+                        <div class="mood">
+                            <img id = "forestid" src="https://www.imagehost.at/images/2023/04/21/Hell-5.png" (click) = "activateForest()" alt="" class="moodimg">
+                        </div>
+                        <div class="mood">
+                            <img id = "hellid" src="https://www.imagehost.at/images/2023/04/21/Hell-10.png" (click) = "activateHell()" alt="" class="moodimg">
+                        </div>
+                        <div class="mood">
+                            <img id = "cozyid" src="https://www.imagehost.at/images/2023/04/21/Hell-11.png" (click) = "activateCozy()" alt="" class="moodimg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- --------------- PAD -------------- -->
+
+    <div *ngIf="isOpenedDiaryImageWindow">
+        <div class="container">
+            <div class="diaryImages">
+                <div class="imageup">
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/367520_cloudy_moon_snow_icon.png')" src="https://www.imagehost.at/images/2023/05/05/367520_cloudy_moon_snow_icon.png" alt="" class="diaryimg">
+                    </div>
+                    <div  class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/7795622_weather_cloud_snow_icon.png')" src="https://www.imagehost.at/images/2023/05/05/7795622_weather_cloud_snow_icon.png"  alt="" class="diaryimg">
+                    </div>
+                    <div  class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/4375113_logo_tripadvisor_icon.png')" src="https://www.imagehost.at/images/2023/05/05/4375113_logo_tripadvisor_icon.png"  alt="" class="diaryimg">
+                    </div>
+                    <div  class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/3792030_magic_pentagram_rite_satanism_icon.png')" src="https://www.imagehost.at/images/2023/05/05/3792030_magic_pentagram_rite_satanism_icon.png"  alt="" class="diaryimg">
+                    </div>
+                    <div  class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/2151704_bakery_farm_field_ranching_rye_icon.png')" src="https://www.imagehost.at/images/2023/05/05/2151704_bakery_farm_field_ranching_rye_icon.png"  alt="" class="diaryimg">
+                    </div>
+                </div><br>
+                <div class="imagedown">
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/07/2793029_christmas_globe_snow_xmas_icon.png')" src="https://www.imagehost.at/images/2023/05/07/2793029_christmas_globe_snow_xmas_icon.png"  alt="" class="diaryimg">
+                    </div>
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/2427876_fish-cake_food_kamaboko_ramen_tasty_icon.png')" src="https://www.imagehost.at/images/2023/05/05/2427876_fish-cake_food_kamaboko_ramen_tasty_icon.png"  alt="" class="diaryimg">
+                    </div>
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/2792999_bauble_christmas_father-christmas_xmas_icon.png')" src="https://www.imagehost.at/images/2023/05/05/2792999_bauble_christmas_father-christmas_xmas_icon.png" alt="" class="diaryimg">
+                    </div>
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/2793047_christmas_icicle_snow_snow-flake_xmas_icon.png')" src="https://www.imagehost.at/images/2023/05/05/2793047_christmas_icicle_snow_snow-flake_xmas_icon.png" alt="" class="diaryimg">
+                    </div>
+                    <div class="img">
+                        <img (click) = "closeImageSelector('https://www.imagehost.at/images/2023/05/05/2993684_brand_brands_icloud_logo_logos_icon.png')" src="https://www.imagehost.at/images/2023/05/05/2993684_brand_brands_icloud_logo_logos_icon.png" alt="" class="diaryimg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+
+
+    <div #padMain *ngIf="isOpenedPadWindow">
+        <div class="container">
+            <div class = "popup">
+                <div class="pads">
+                    <div class="up">
+                        <div class="pad">
+                            <img id = "snowpeaksid" src="https://www.imagehost.at/images/2023/04/25/annie-spratt-6a3nqQ1YwBw-unsplash.jpg" (click) = "changePad(1)" alt="" class="padimg">
+                        </div>
+                        <div  class="pad">
+                            <img id = "rainyid" src="https://www.imagehost.at/images/2023/04/25/pure-white-background-85a2a7fd.jpg" (click) = "changePad(2)" alt="" class="padimg">
+                        </div>
+                        <div  class="pad">
+                            <img id = "rainbowid" src="https://www.imagehost.at/images/2023/04/25/kiwihug-y_2GC4EhOP4-unsplash.jpg" (click) = "changePad(3)" alt="" class="padimg">
+                        </div>
+                    </div><br>
+                    <div class="down">
+                        <div class="pad">
+                            <img id = "forestid" src="https://www.imagehost.at/images/2023/04/25/marjan-blan-_kUxT8WkoeY-unsplash.jpg" (click) = "changePad(4)" alt="" class="padimg">
+                        </div>
+                        <div class="pad">
+                            <img id = "hellid" src="https://www.imagehost.at/images/2023/04/25/nordwood-themes-R53t-Tg6J4c-unsplash.jpg" (click) = "changePad(5)" alt="" class="padimg">
+                        </div>
+                        <div class="pad">
+                            <img id = "cozyid" src="https://www.imagehost.at/images/2023/04/25/olga-thelavart-vS3idIiYxX0-unsplash.jpg" (click) = "changePad(6)" alt="" class="padimg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class = "wrapper" #wrapper>
+        <div class = "diaryMain">
+            <div class="form__group field">
+                <input id = "titleInput" type="input" [(ngModel)]="diaryTitle" class="form__field" placeholder="Name" required="">
+                <label for="name" class="form__label">Name</label>
+            </div>
+            <ul class = "padSettings">
+                <div class = "leftPad">
+                    <li>
+                        <select id = "fontFamilySelect" #selectFontFamily (change)="changeFontFamily()" [(ngModel)]="fontFamily" >
+                            <option selected style = "font-family: 'Times New Roman', Times, serif;" value = "Times New Roman">Times New Roman</option>
+                            <option style = "font-family: 'Courier New', Courier, monospace;" value = "Courier New">Courier</option>
+                            <option style = "font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'" value = "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS'">Calibri</option>
+                            <option style = "font-family: 'Sofia', sans-serif" value = "Sofia">Sofia</option>
+                            <option style = "font-family: 'Trirong', serif" value = "Trirong">Trirong</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select id = "fontSizeInput" #selectFontSize (change)="changeFontSize()" [(ngModel)]="fontSize" >
+                            <option selected value = "24">24</option>
+                            <option value = "26">26</option>
+                            <option value = "28">28</option>
+                            <option value = "31">31</option>
+                            <option value = "36">36</option>
+                            <option value = "48">48</option>
+                        </select>
+                        <!-- <input id = "fontSizeInput" type="number" value = "25" [(ngModel)]="fontSize" (input)="changeFontSize()"> -->
+                    </li>
+                    
+                    <li>
+                        <button id = "boldButton"(click) = "changeTextToBold()">B</button>
+                    </li>
+                    <li>
+                        <button id = "italicButton" (click) = "changeTextToItalic()">I</button>
+                    </li>
+                    <li>
+                        <button id = "underlinedButton" (click) = "changeTextToUnderlined()">U</button>
+                    </li>
+                    <li>
+                        <input  #colorInput id = "colorInput" type = "color" (input) = "changeFontColor()" [(ngModel)]="fontColor">
+                    </li>
+                    
+                </div>
+
+                <div class = "middlePad">
+                    <li>
+                        <button id = "styleButton" (click)="openPadWindow()"></button>
+                    </li>
+                </div>
+
+                <div class = "rightPad">
+                    <li>
+                        <button class = "clear" (click)="clearDiary()"></button>
+                    </li>
+                    <li>
+                        <button style="cursor: pointer;border: none;display:block;width:30px; height:30px;background-color: transparent;background-image: url(https://www.imagehost.at/images/2023/04/28/image-gallery.png);background-size: contain;" (click)="openImageSelector()"></button>
+                        <!-- <input #imageId id = "picture" type="file" name="pic" accept="image/*" style="float: left;display:none" class="photosave" (change)="changeImage()"> -->
+                    </li>
+                    <li>
+                        <label for = "isPublicCheck">Public</label>
+                        <input  id = "isPublicCheck" #isPublicChecked type="checkbox" (input)="changePrivacy()" [(ngModel)]="private">
+                    </li>
+                    <li>
+                        <button (click) = "postDiary()" id="saveButton"></button>
+                    </li>
+                    <li>
+                        <button id="downloadButton" (click)="downloadDiary()"></button>
+                    </li>
+                </div>
+
+            </ul>
+            
+
+            <textarea id="diary" #diary>
+                
+            </textarea>
+        </div>
+        <div class = "head" #main>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+<app-pre-loader *ngIf="preloader"></app-pre-loader>
+
+<div *ngIf="!preloader">
+
+  <app-top-bar-main></app-top-bar-main>
+
+  <div class="back">
+    <div class="wrap">
+      <div class="search">
+        <input style = "padding: 15px;" type="text" class="searchTerm" placeholder="What are you looking for?" [(ngModel)]="searchTerm">
+        <button type="submit" class="searchButton" (click)="filterItems()">
+          <i class="fa fa-search"></i>
+          </button>
+          <!-- <select [(ngModel)]="selectedMood" (change)="sortPostsByMood(selectedMood)"> -->
+          <select [(ngModel)]="selectedMood" (change)="sortPostsByMood()">
+            <option value="">Moods</option>
+            <option value="1">Snow Peak</option>
+            <option value="6">Rainy</option>
+            <option value="2">Hell</option>
+            <option value="3">Cozy</option>
+            <option value="4">Rainbow</option>
+            <option value="5">Forest</option>
+          </select>
+      </div>
+  </div>
+    <div class="news"></div>
+    
+    <div class="cards">
+      <div class="card" *ngFor="let post of posts">
+        <div class="header"><img [src]="post.image" alt=""></div>
+        <div class="info">
+          <p class="title">{{ post.title }}</p>
+          <p>{{ post.description }}</p>
+        </div>
+        <div class="footer">
+          <p class="tag">{{ post.authorName }}</p>
+          <button type="button" class="action" [routerLink]="['/diaryDetails', post.id]" >Read</button>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+</div>

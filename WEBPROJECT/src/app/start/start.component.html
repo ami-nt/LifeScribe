@@ -1,0 +1,18 @@
+<app-pre-loader *ngIf="preLoader"></app-pre-loader>
+<div class="main" *ngIf="!preLoader">
+    <div class="hero">
+        <nav>
+            <img src="https://i.ibb.co/cvgf59H/1-1.png" class="logo">
+        </nav>
+        <div class="content">
+            <h1>Magic Diary</h1>
+            <!-- <button [routerLink]="['/login']">START</button> -->
+            <button class="learn-more" [routerLink]="['/login']">
+                <span class="circle" aria-hidden="true">
+                <span class="icon arrow"></span>
+                </span>
+                <span class="button-text">Start</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+.page {
+    display: flex;
+    position: relative;
+    background: url("https://www.imagehost.at/images/2023/04/27/sunset_in_the_fields_generated.jpg");
+    /*background: lightyellow;*/
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+    width: 100%;
+    height:100%;
+  }
+  
+  .post-detail {
+    border-radius: 15px;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    background: rgba(168, 168, 168, 0.5);
+  }
+  
+  
+  .post-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10px;
+    margin-top: -1%;
+  }
+  
+  .post-detail img {
+    max-width: 80%;
+    margin-left: 28%;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  
+  .post-detail .desc {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .post-actions {
+    margin-top: 20px;
+    display: inline;
+  }
+  
+  .post-actions button {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .post-actions span {
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    margin-right: 10px;
+    /*margin-top: 5%;*/
+    cursor: pointer;
+    /* width: 50px; */
+  }
+  
+  .post-actions i {
+    color: #ccc;
+  }
+  
+  .post-actions button:hover i {
+    color: rgb(3, 54, 29);
+  }
+  
+  
+  /*Comments*/
+  .img-sm {
+    width: 70px;
+    height: 60px;
+  }
+  
+  .panel {
+    box-shadow: 0 2px 0 rgba(0,0,0,0.075);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 15px;
+  }
+  
+  
+  .panel-body {
+    padding: 25px 20px;
+  }
+  
+  
+  .media-block .media-left {
+    display: block;
+    float: left;
+  }
+  
+  .mar-top {
+    margin-top: 15px;
+  }
+  .form-control{
+    resize: none;
+    width: 1100px;
+    height: 80px;
+  }
+  .mar-top button{
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    background-color: rgb(6, 88, 6);
+    color: aliceblue;
+  }
+  .text-muted{
+    margin-top: -15px;
+  }
+  .text-muted, a.text-muted:hover, a.text-muted:focus {
+    color: #acacac;
+  }

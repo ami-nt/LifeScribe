@@ -1,0 +1,27 @@
+
+<app-pre-loader *ngIf="preloader"></app-pre-loader>
+
+<body *ngIf="!preloader">
+    <app-top-bar-start></app-top-bar-start>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+                    <input type="email" name="email" [(ngModel)]="email" placeholder="Email" required="">
+					<input type="text" name="txt" [(ngModel)]="username" placeholder="Username" required="">
+					<input type="password" name="pswd" [(ngModel)]="password" placeholder="Password" required="">
+					<button (click)="register()">Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form>
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" [(ngModel)]="username" placeholder="Username" required="">
+					<input type="password" name="pswd" [(ngModel)]="password" placeholder="Password" required="">
+					<button (click)="login()">Login</button>
+				</form>
+			</div>
+	</div>
+</body>

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Skillet", sans-serif;
+  }
+  header{
+    position: absolute;
+    z-index: 999;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 7vh;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo{
+    width: 250px;
+  }
+  
+  .navigation a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    padding: 6px 15px;
+    border-radius: 20px;
+    margin: 0 10px;
+    font-weight: 600;
+  }
+  
+  .navigation a:hover, .navigation a.active{
+    background-color: rgb(255, 255, 255);
+    color: rgb(33, 58, 57);
+  }

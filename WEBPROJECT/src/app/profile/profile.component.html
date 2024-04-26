@@ -1,0 +1,98 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<app-pre-loader *ngIf="preloader"></app-pre-loader>
+
+<div *ngIf="!preloader">
+<app-top-bar-main></app-top-bar-main>
+
+<div *ngIf="isOpenedAvaWindow">
+    <div class="container">
+        <div class="avatars">
+            <div class="avaup">
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/18f37c783540be3f0.png')" src="https://www.imagehost.at/images/2023/05/05/18f37c783540be3f0.png" alt="" class="avaimg">
+                </div>
+                <div  class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/2.png')" src="https://www.imagehost.at/images/2023/05/05/2.png"  alt="" class="avaimg">
+                </div>
+                <div  class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/3.png')" src="https://www.imagehost.at/images/2023/05/05/3.png"  alt="" class="avaimg">
+                </div>
+                <div  class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/4.png')" src="https://www.imagehost.at/images/2023/05/05/4.png"  alt="" class="avaimg">
+                </div>
+                <div  class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/5.png')" src="https://www.imagehost.at/images/2023/05/05/5.png"  alt="" class="avaimg">
+                </div>
+            </div><br>
+            <div class="avadown">
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/6.png')" src="https://www.imagehost.at/images/2023/05/05/6.png"  alt="" class="avaimg">
+                </div>
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/7.png')" src="https://www.imagehost.at/images/2023/05/05/7.png"  alt="" class="avaimg">
+                </div>
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/8.png')" src="https://www.imagehost.at/images/2023/05/05/8.png" alt="" class="avaimg">
+                </div>
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/9.png')" src="https://www.imagehost.at/images/2023/05/05/9.png" alt="" class="avaimg">
+                </div>
+                <div class="ava">
+                    <img (click) = "closeAvatarSelector('https://www.imagehost.at/images/2023/05/05/10.png')" src="https://www.imagehost.at/images/2023/05/05/10.png" alt="" class="avaimg">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="all" >
+        <div class="profile">
+            <div id="admin_information">
+                <div id="admin_image">
+                    <img #imagePreview src={{image}}>
+                </div>
+                <div id="admin_details" *ngIf="user">
+                    <label >Name</label>
+                    <p>{{user.userName}}</p>
+                    <!-- <p>Damir</p> -->
+
+                    <label >Email</label>
+                    <p>{{user.mail}}</p>
+                    <!-- <p>dmaratovich@gmail.ru</p> -->
+
+            
+                </div>
+            </div>
+            <div class="save">
+                <button (click)="openAvatarSelector()">Change Avatar</button>
+            </div>
+        </div>
+        <div class="two alt-two">
+            <h1>My Diaries
+            <span>public and private</span>
+            </h1>
+        </div>
+        <div class="pustoi">
+
+        </div>
+        <div class="cards">
+            <div class="card" *ngFor="let diary of diaries">
+                <div class="header"><img [src]="diary.image" alt=""></div>
+                <div class="info">
+                <p class="title">{{ diary.title }}</p>
+                <p>{{ diary.description }}</p>
+                </div>
+                <div class="footer">
+                <button type="button" class="action" [routerLink]="['/diaryDetails',diary.id]">Read</button>
+                <div class="right">
+                    <!-- <button type="button" (click)="editDiary(diary)" [routerLink]="['/diary']"><span class="material-symbols-outlined">edit_square</span></button> -->
+                    <button class="action" type="button" (click)="deleteDiary(diary.id)"><i class="material-icons">delete</i></button>
+                </div>
+                </div>
+            </div>
+
+        </div>  
+    </div>
+</div>
